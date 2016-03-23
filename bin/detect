@@ -1,10 +1,9 @@
 #!/bin/sh
 
-echo `env`
-
-if [ $PIVOTALTRACKER_API_TOKEN ]; then
-  exit 0
-else
-  echo "PIVOTALTRACKER_API_TOKEN is missing"
-  exit 1
-fi
+exit 0
+# if [ $PIVOTALTRACKER_API_TOKEN ]; then
+#   exit 0
+# else
+#   echo "PIVOTALTRACKER_API_TOKEN is missing"
+#   exit 1
+# fi
