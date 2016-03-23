@@ -1,0 +1,6 @@
+#!/bin/sh
+
+curl -H "Content-Type: application/json" \
+     -H "X-TrackerToken: $PIVOTALTRACKER_API_TOKEN" \
+     -X POST -d "{\"name\":\"$PIVOTALTRACKER_DEPLOY_MESSAGE\", \"story_type\":\"release\", \"current_state\":\"accepted\", \"description\":\"$PIVOTALTRACKER_DEPLOY_MESSAGE - $SOURCE_VERSION\"}" \
+     https://www.pivotaltracker.com/services/v5/projects/$PIVOTALTRACKER_PROJECT_ID/stories.json
