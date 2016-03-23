@@ -1,5 +1,9 @@
 #!/bin/sh
 
+export "PIVOTALTRACKER_API_TOKEN=$(cat $3/PIVOTALTRACKER_API_TOKEN)"
+export "PIVOTALTRACKER_PROJECT_ID=$(cat $3/PIVOTALTRACKER_PROJECT_ID)"
+export "PIVOTALTRACKER_DEPLOY_MESSAGE=$(cat $3/PIVOTALTRACKER_DEPLOY_MESSAGE)"
+
 curl -H "Content-Type: application/json" \
      -H "X-TrackerToken: $PIVOTALTRACKER_API_TOKEN" \
      -X POST -d "{\"name\":\"$PIVOTALTRACKER_DEPLOY_MESSAGE\", \"story_type\":\"release\", \"current_state\":\"accepted\", \"description\":\"$PIVOTALTRACKER_DEPLOY_MESSAGE - $SOURCE_VERSION\"}" \
